@@ -14,14 +14,23 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const task = tasks.find(task => task.id === id);
+  const id = req.params.id;
 
-  if (task) {
-    res.json(task);
-  } else {
-    res.status(404).json({ error: 'Task not found' });
+  // ✅ 1. Validate that ID is a number
+  if (isNaN(id)) {
+    return res.status(400).json({ error: 'Invalid ID format' });
   }
+
+  const numericId = parseInt(id);
+  const task = tasks.find(t => t.id === numericId);
+
+  // ✅ 2. Handle non-existent task
+  if (!task) {
+    return res.status(404).json({ error: 'Task not found' });
+  }
+
+  // ✅ 3. Success response
+  res.json(task);
 });
 
 module.exports = router;
