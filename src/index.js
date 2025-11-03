@@ -1,4 +1,5 @@
-const express = require('express');
+import express from 'express';
+
 const app = express();
 const port = 3000;
 
@@ -6,7 +7,7 @@ const health = [
        { "status": "healthy", "uptime": process.uptime() }
 ];
 
-const tasksRouter = require('./routes/tasks');
+import tasksRouter from './routes/tasks.js';
 
 app.get('/', (req, res) => {
        res.send('Task Management API is running!');
