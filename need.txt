@@ -1,0 +1,3 @@
+how to validate any requests in postman
+1. how many time required
+2. status code

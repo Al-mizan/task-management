@@ -1,26 +1,19 @@
 import express from 'express';
 
-const app = express();
-const port = 3000;
-
-const health = [
-       { "status": "healthy", "uptime": process.uptime() }
-];
-
+import { PORT } from './config/env.js';
 import tasksRouter from './routes/tasks.js';
 
-app.get('/', (req, res) => {
-       res.send('Task Management API is running!');
-});
+const app = express();
+const port = PORT || 3000;
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/tasks', tasksRouter);
 
-app.get('/health', (req, res) => {
-	res.json(health);
+app.get('/', (req, res) => {
+  res.json({ message: 'Task Management API is running' });
 });
 
 app.listen(port, () => {
-       console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
-
-

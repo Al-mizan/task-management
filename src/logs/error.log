@@ -1,0 +1,5 @@
+{"error":"Unknown database 'task_management'","level":"error","message":"Failed to seed database","timestamp":"2025-11-24T13:06:24.590Z"}
+{"error":"Unknown database 'taskdb'","level":"error","message":"Failed to seed database","timestamp":"2025-11-24T13:07:43.659Z"}
+{"error":"Table 'taskdb.tasks' doesn't exist","level":"error","message":"Failed to seed database","timestamp":"2025-11-24T13:10:15.840Z"}
+{"error":"Unknown database 'task_management'","level":"error","message":"Failed to seed database","timestamp":"2025-11-24T14:03:13.825Z"}
+{"error":"rows is not defined","level":"error","message":"Failed to seed database","timestamp":"2025-11-24T14:09:01.016Z"}
